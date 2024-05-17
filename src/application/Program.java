@@ -7,6 +7,7 @@ import entities.Departamento;
 import entities.Vendedor;
 import model.DaoFactory;
 import model.dao.VendedorDAO;
+import java.util.Date;
 
 public class Program {
     public static void main(String[] args) {
@@ -30,6 +31,12 @@ public class Program {
     for (Vendedor obj : list) {
         System.out.println(obj);
     }
+
+    
+    System.out.println("\n--- Teste 4: Vendedor insert ---");
+    Vendedor newVendedor = new Vendedor(null, "Greg", "greg@gmail.com", new Date(), 4000.0, departamento);
+    vendedorDAO.insert(newVendedor);
+    System.out.println("Inserted! New id = " + newVendedor.getId());
 
     }
 }
